@@ -1,6 +1,13 @@
 const container = document.querySelector('.container');
 const grid = document.querySelector('#grid');
 const party = document.querySelector('#party');
+const pen = document.querySelector('#pen');
+
+let color = "black";
+
+pen.addEventListener('change', ()=>{
+    color = pen.value;
+});
 
 let rainbow = false;
 generateSquares();
@@ -48,7 +55,7 @@ function addHover(){
         element.addEventListener('mouseover', ()=>{
 
             if(!rainbow){
-                element.style.backgroundColor = "black";
+                element.style.backgroundColor = color;
             }else{
                 color = "rgb(" + Math.floor(Math.random()*255) + 
                 "," + Math.floor(Math.random()*255) + "," + 
