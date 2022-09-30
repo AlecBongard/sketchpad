@@ -16,7 +16,7 @@ grid.addEventListener('click', ()=>{
 });
 
 party.addEventListener('click',()=>{
-    rainbow=true;
+    rainbow ? rainbow = false : rainbow = true;
 });
 
 
