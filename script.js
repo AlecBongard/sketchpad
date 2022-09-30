@@ -3,9 +3,13 @@ const btn = document.querySelector('button');
 generateSquares();
 
 btn.addEventListener('click', ()=>{
-    let nsquares = prompt("Enter the number of squares per side");
-
-    generateSquares(nsquares);
+    let nsquares = parseInt(prompt("Enter the number of squares per side (1-100)"));
+    if(Number.isNaN(nsquares) || nsquares > 100 ||
+        nsquares <= 0){
+        alert("Please enter an integer between 0 and 100.");
+    }else{
+        generateSquares(nsquares);
+    }
 });
 
 
