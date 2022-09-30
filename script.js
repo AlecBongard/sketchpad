@@ -1,8 +1,11 @@
 const container = document.querySelector('.container');
-const btn = document.querySelector('button');
+const grid = document.querySelector('#grid');
+const party = document.querySelector('#party');
+
+let rainbow = false;
 generateSquares();
 
-btn.addEventListener('click', ()=>{
+grid.addEventListener('click', ()=>{
     let nsquares = parseInt(prompt("Enter the number of squares per side (1-100)"));
     if(Number.isNaN(nsquares) || nsquares > 100 ||
         nsquares <= 0){
@@ -10,6 +13,10 @@ btn.addEventListener('click', ()=>{
     }else{
         generateSquares(nsquares);
     }
+});
+
+party.addEventListener('click',()=>{
+    rainbow=true;
 });
 
 
@@ -39,7 +46,16 @@ function addHover(){
     const square = document.querySelectorAll(".square");
     square.forEach(element => {
         element.addEventListener('mouseover', ()=>{
-            element.classList.add('hovered');
+
+            if(!rainbow){
+                element.style.backgroundColor = "black";
+            }else{
+                color = "rgb(" + Math.floor(Math.random()*255) + 
+                "," + Math.floor(Math.random()*255) + "," + 
+                Math.floor(Math.random()*255) + ")";
+
+                element.style.backgroundColor = color;
+            }
         });
     });
 }
