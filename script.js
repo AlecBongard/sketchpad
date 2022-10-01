@@ -24,7 +24,7 @@ pen.addEventListener('input', ()=>{
 });
 
 clear.addEventListener('click', ()=>{
-    generateSquares(size);
+    generateSquares(size, bgcolor.value);
 });
 
 
