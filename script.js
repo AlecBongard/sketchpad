@@ -1,26 +1,36 @@
 const container = document.querySelector('.container');
-const grid = document.querySelector('#grid');
 const party = document.querySelector('#party');
 const pen = document.querySelector('#pen');
+const clear = document.querySelector('#clear');
+const slide = document.querySelector('#slide');
+const sizeDisp = document.querySelector('.sizeDisp');
 
 let color = "black";
+let size = 16;
+sizeDisp.textContent = sizeDisp.textContent = size + "x" + size;
 
-pen.addEventListener('change', ()=>{
+slide.addEventListener('change', ()=>{
+    generateSquares(size);
+});
+
+slide.addEventListener('input', ()=>{
+    size = slide.value;
+    sizeDisp.textContent = size + "x" + size;
+});
+
+pen.addEventListener('input', ()=>{
     color = pen.value;
 });
+
+clear.addEventListener('click', ()=>{
+    generateSquares(size);
+});
+
+
 
 let rainbow = false;
 generateSquares();
 
-grid.addEventListener('click', ()=>{
-    let nsquares = parseInt(prompt("Enter the number of squares per side (1-100)"));
-    if(Number.isNaN(nsquares) || nsquares > 100 ||
-        nsquares <= 0){
-        alert("Please enter an integer between 0 and 100.");
-    }else{
-        generateSquares(nsquares);
-    }
-});
 
 party.addEventListener('click',()=>{
     rainbow ? rainbow = false : rainbow = true;

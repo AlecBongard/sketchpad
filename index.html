@@ -12,10 +12,13 @@
         <p class="title">Etch-A-Sketch</p>
         <div class="overall">
             <div class="buttons">
-                <input type="range" min="2" max="64">
+                <div class="sizeinfo">
+                    <p class="sizeDisp"></p>
+                    <input type="range" min="2" max="32" id="slide">
+                </div>
                 <input type="color" value="#000000" id="pen">
-                <button id="grid">Click Me</button>
                 <button id="party">Party Mode</button>
+                <button id="clear">Clear</button>
             </div>
             <div class="wrapper">
                 <div class="container"></div>
