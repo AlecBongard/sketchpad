@@ -35,7 +35,7 @@ body{
     border: 1px black solid;
 }
 
-#pen{
+#pen, #bgcolor{
     -webkit-appearance: none;
     margin: 0px;
     border: 0px;
@@ -72,4 +72,20 @@ body{
 
 #slide:hover{
     background-color: rgba(230, 230, 230, 0.592);
+}
+
+button{
+    border: 1px black solid;
+    margin: 5px 0px;
+    background-color: white;
+}
+
+button:hover{
+    background-color: rgba(230, 230, 230, 0.592);
+}
+
+.colorElts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
